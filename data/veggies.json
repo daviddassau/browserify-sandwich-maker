@@ -1,0 +1,16 @@
+{
+	"veggies": [
+		{
+			"Lettuce": 0.50
+		},
+		{
+			"Tomatoes": 0.50
+		},
+		{
+			"Onions": 0.50
+		},
+		{
+			"None": 0
+		}
+	]
+}
