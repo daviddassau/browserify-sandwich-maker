@@ -1,16 +1,3 @@
 {
-	"cheese": [
-		{
-			"American": 1.00
-		},
-		{
-			"Swiss": 1.00
-		},
-		{
-			"Provolone": 1.00
-		},
-		{
-			"None": 0
-		}
-	]
+	"cheese": {"American": 1.00,"Swiss": 1.00,"Provolone": 1.00,"None": 0}
 }

@@ -27,8 +27,7 @@ const errorFunction = () => {
 
 // When bread loads
 const whenBreadLoads = function(){
-	breadArray = JSON.parse(this.responseText);
-	console.log({breadArray});
+	breadArray = JSON.parse(this.responseText).bread;
 };
 
 // Initializer for bread
@@ -36,17 +35,27 @@ const breadInitializer = () => {
 	loadAllIngredients.loadBread(whenBreadLoads, errorFunction);
 };
 
+// Bread getter function
+const getBread = () => {
+	return breadArray;
+};
+
 
 
 // When meat loads
-// const whenMeatLoads = function(){
-// 	meatArray = JSON.parse(this.responseText);
-// };
+const whenMeatLoads = function(){
+	meatArray = JSON.parse(this.responseText).meat;
+};
 
 // // Ititializer for meat
-// const meatInitializer = () => {
-// 	loadMeat(whenMeatLoads, errorFunction);
-// };
+const meatInitializer = () => {
+	loadAllIngredients.loadMeat(whenMeatLoads, errorFunction);
+};
+
+// Bread getter function
+const getMeat = () => {
+	return meatArray;
+};
 
 
 
@@ -85,7 +94,7 @@ const breadInitializer = () => {
 // };
 
 
-module.exports = {breadInitializer};
+module.exports = {breadInitializer, getBread, meatInitializer, getMeat};
 
 
 
@@ -93,13 +102,87 @@ module.exports = {breadInitializer};
 
 
 
-},{"./xhr":3}],2:[function(require,module,exports){
+},{"./xhr":4}],2:[function(require,module,exports){
+"use strict";
+
+const itsTheFinalCountdown = require('./data');
+
+
+
+var finalSandwichPrice = 0;
+var sandwichTotal = document.getElementById("sandwichTotal");
+var itemFoods = document.getElementById("sandwichItems");
+
+
+// Functionality for Bread
+var selectedBread; // Variable to hold the bread that the user selects
+let bread = document.getElementById("breadDiv"); // Getting the bread div from html
+
+bread.addEventListener("change", (e) => {
+	// console.log("bread");
+	let myBread = itsTheFinalCountdown.getBread();
+	selectedBread = e.target.value;
+	console.log("myBread", myBread);
+	for(let key in myBread){
+		console.log(key);
+		if(selectedBread === key && e.target.checked){
+			finalSandwichPrice += myBread[key];
+			sandwichTotal.innerHTML = `$${finalSandwichPrice}`;
+			itemFoods.innerHTML += `<p id="${key}">$${myBread[key]} ${key}</p>`;
+		} else if(selectedBread === key && e.target.checked === false){
+			finalSandwichPrice -= myBread[key];
+			sandwichTotal.innerHTML = `$${finalSandwichPrice}`;
+			itemFoods.removeChild(document.getElementById(`${key}`));
+		}
+	}
+});
+
+const breadGetter = () => {
+	return finalSandwichPrice;
+};
+
+
+
+// Functionality for Meat
+var selectedMeat; // Variable to hold the meat that the user selects
+let meat = document.getElementById("meatDiv"); // Getting the meat div from html
+
+meat.addEventListener("change", (e) => {
+	let myMeat = itsTheFinalCountdown.getMeat();
+	selectedBread = e.target.value;
+	for(let key in myMeat){
+		console.log(key);
+		if(selectedBread === key && e.target.checked){
+			finalSandwichPrice += myMeat[key];
+			sandwichTotal.innerHTML = `$${finalSandwichPrice}`;
+			itemFoods.innerHTML += `<p id="${key}">$${myMeat[key]} ${key}</p>`;
+		} else if(selectedBread === key && e.target.checked === false){
+			finalSandwichPrice -= myMeat[key];
+			sandwichTotal.innerHTML = `$${finalSandwichPrice}`;
+			itemFoods.removeChild(document.getElementById(`${key}`));
+		}
+	}
+});
+
+const meatGetter = () => {
+	return finalSandwichPrice;
+};
+
+
+
+
+module.exports = {breadGetter, meatGetter};
+
+},{"./data":1}],3:[function(require,module,exports){
 "use strict";
 
 const ingredients = require('./data');
+const domHandler = require('./domHandler');
 
 ingredients.breadInitializer();
-},{"./data":1}],3:[function(require,module,exports){
+ingredients.meatInitializer();
+
+},{"./data":1,"./domHandler":2}],4:[function(require,module,exports){
 "use strict";
 
 const loadBread = (onBreadLoad, onBreadError) => {
@@ -143,6 +226,6 @@ const loadVeggies = (onVeggiesLoad, onVeggiesError) => {
 };
 
 
-module.exports = {loadBread};
+module.exports = {loadBread, loadMeat};
 
-},{}]},{},[2]);
+},{}]},{},[3]);

@@ -26,8 +26,7 @@ const errorFunction = () => {
 
 // When bread loads
 const whenBreadLoads = function(){
-	breadArray = JSON.parse(this.responseText);
-	console.log({breadArray});
+	breadArray = JSON.parse(this.responseText).bread;
 };
 
 // Initializer for bread
@@ -35,17 +34,27 @@ const breadInitializer = () => {
 	loadAllIngredients.loadBread(whenBreadLoads, errorFunction);
 };
 
+// Bread getter function
+const getBread = () => {
+	return breadArray;
+};
+
 
 
 // When meat loads
-// const whenMeatLoads = function(){
-// 	meatArray = JSON.parse(this.responseText);
-// };
+const whenMeatLoads = function(){
+	meatArray = JSON.parse(this.responseText).meat;
+};
 
 // // Ititializer for meat
-// const meatInitializer = () => {
-// 	loadMeat(whenMeatLoads, errorFunction);
-// };
+const meatInitializer = () => {
+	loadAllIngredients.loadMeat(whenMeatLoads, errorFunction);
+};
+
+// Bread getter function
+const getMeat = () => {
+	return meatArray;
+};
 
 
 
@@ -84,7 +93,7 @@ const breadInitializer = () => {
 // };
 
 
-module.exports = {breadInitializer};
+module.exports = {breadInitializer, getBread, meatInitializer, getMeat};
 
 
 

@@ -1,16 +1,3 @@
 {
-	"meat": [
-		{
-			"Ham": 2.00
-		},
-		{
-			"Turkey": 2.00
-		},
-		{
-			"Chicken": 2.00
-		},
-		{
-			"None": 0
-		}
-	]
+	"meat": {"Ham": 2.00,"Turkey": 2.00,"Chicken": 2.00,"None": 0}
 }
