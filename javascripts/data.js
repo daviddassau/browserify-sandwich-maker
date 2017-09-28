@@ -11,13 +11,6 @@ let veggiesArray = [];
 // Require for xhr.js
 const loadAllIngredients = require('./xhr');
 
-// Require for ingredients
-// const loadBread = require('./bread');
-// const loadMeat = require('./meat');
-// const loadCheese = require('./cheese');
-// const loadCondiments = require('./condiments');
-// const loadVeggies = require('./veggies');
-
 
 // Error
 const errorFunction = () => {
@@ -46,7 +39,7 @@ const whenMeatLoads = function(){
 	meatArray = JSON.parse(this.responseText).meat;
 };
 
-// // Ititializer for meat
+// Initializer for meat
 const meatInitializer = () => {
 	loadAllIngredients.loadMeat(whenMeatLoads, errorFunction);
 };
@@ -58,42 +51,59 @@ const getMeat = () => {
 
 
 
-// // When cheese loads
-// const whenCheeseLoads = function(){
-// 	cheeseArray = JSON.parse(this.responseText);
-// };
+// When cheese loads
+const whenCheeseLoads = function(){
+	cheeseArray = JSON.parse(this.responseText).cheese;
+};
 
-// // Ititializer for cheese
-// const cheeseInitializer = () => {
-// 	loadCheese(whenCheeseLoads, errorFunction);
-// };
+// Initializer for cheese
+const cheeseInitializer = () => {
+	loadAllIngredients.loadCheese(whenCheeseLoads, errorFunction);
+};
 
-
-
-// // When condiments loads
-// const whenCondimentsLoads = function(){
-// 	condimentsArray = JSON.parse(this.responseText);
-// };
-
-// // Ititializer for condiments
-// const condimentsInitializer = () => {
-// 	loadCondiments(whenCondimentsLoads, errorFunction);
-// };
+// Cheese getter function
+const getCheese = () => {
+	return cheeseArray;
+};
 
 
 
-// // When veggies loads
-// const whenVeggiesLoads = function(){
-// 	veggiesArray = JSON.parse(this.responseText);
-// };
+// When condiments loads
+const whenCondimentsLoads = function(){
+	condimentsArray = JSON.parse(this.responseText).condiments;
+};
 
-// // Initializer for veggies
-// const veggiesInitializer = () => {
-// 	loadVeggies(whenVeggiesLoads, errorFunction);
-// };
+// Inititializer for condiments
+const condimentsInitializer = () => {
+	loadAllIngredients.loadCondiments(whenCondimentsLoads, errorFunction);
+};
+
+// Condiments getter function
+const getCondiments = () => {
+	return condimentsArray;
+};
 
 
-module.exports = {breadInitializer, getBread, meatInitializer, getMeat};
+
+// When veggies loads
+const whenVeggiesLoads = function(){
+	veggiesArray = JSON.parse(this.responseText).veggies;
+};
+
+// Initializer for veggies
+const veggiesInitializer = () => {
+	loadAllIngredients.loadVeggies(whenVeggiesLoads, errorFunction);
+};
+
+// Veggies getter function
+const getVeggies = () => {
+	return veggiesArray;
+};
+
+
+
+
+module.exports = {breadInitializer, getBread, meatInitializer, getMeat, cheeseInitializer, getCheese, condimentsInitializer, getCondiments, veggiesInitializer, getVeggies};
 
 
 

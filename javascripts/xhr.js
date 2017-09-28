@@ -41,4 +41,4 @@ const loadVeggies = (onVeggiesLoad, onVeggiesError) => {
 };
 
 
-module.exports = {loadBread, loadMeat};
+module.exports = {loadBread, loadMeat, loadCheese, loadCondiments, loadVeggies};
