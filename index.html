@@ -4,107 +4,119 @@
 	<title>Broswerify Sandwich Maker</title>
 	<!-- Bootsrap CSS CDN -->
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  	<link rel="stylesheet" type="text/css" href="./styles/main.css">
 </head>
 <body>
 
 <div class="container">
+
+	<!-- <div class="row">
+		<div class="col-md-12">
+			<img src="http://www.allfavourites.com/seibei/sandwich-dinosaur-seibei-detail.jpg">
+		</div>
+	</div> -->
+
 	<h1>Sandwich Maker - Browserify Edition!!!</h1>
 
+
 	<div class="row">
-		<div class="col-md-2">
-			<h3>Bread</h3>
-				<div id="breadDiv">
-					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" name="optionsRadios" id="breadCheckboxWhite" class="breadOption" value="White">
-					    White - $2.00
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" name="optionsRadios" id="breadCheckboxWheat" class="breadOption" value="Wheat">
-					    Wheat - $2.00
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" name="optionsRadios" id="breadCheckboxAsiago" class="breadOption" value="Asiago">
-					    Asiago - $3.00
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input type="checkbox" name="optionsRadios" id="breadCheckboxNone" class="breadOption" value="None">
-					    No Bread
-					  </label>
-					</div>
+		<div class="col-md-6">
+			<div class="row">
+				<div class="col-md-4">
+					<h3>Bread</h3>
+						<div id="breadDiv">
+							<div class="checkbox">
+							  <label>
+							    <input type="checkbox" name="optionsRadios" id="breadCheckboxWhite" class="breadOption" value="White">
+							    White - $2.00
+							  </label>
+							</div>
+							<div class="checkbox">
+							  <label>
+							    <input type="checkbox" name="optionsRadios" id="breadCheckboxWheat" class="breadOption" value="Wheat">
+							    Wheat - $2.00
+							  </label>
+							</div>
+							<div class="checkbox">
+							  <label>
+							    <input type="checkbox" name="optionsRadios" id="breadCheckboxAsiago" class="breadOption" value="Asiago">
+							    Asiago - $3.00
+							  </label>
+							</div>
+							<div class="checkbox">
+							  <label>
+							    <input type="checkbox" name="optionsRadios" id="breadCheckboxNone" class="breadOption" value="None">
+							    No Bread
+							  </label>
+							</div>
+						</div>
 				</div>
-		</div>
 
 
-		<div class="col-md-2">
-			<h3>Meat</h3>
-				<div id="meatDiv">
-					<div class="checkbox">
-					  <label>
-					    <input id="meatCheckboxHam" class="meatOption" type="checkbox" value="Ham">
-					    Ham - $2.00
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input id="meatCheckboxTurkey" class="meatOption" type="checkbox" value="Turkey">
-					    Turkey - $2.00
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input id="meatCheckboxChicken" class="meatOption" type="checkbox" value="Chicken">
-					    Chicken - $2.00
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input id="meatCheckboxNone" class="meatOption" type="checkbox" value="None">
-					    No Meat
-					  </label>
-					</div>
+				<div class="col-md-4">
+					<h3>Meat</h3>
+						<div id="meatDiv">
+							<div class="checkbox">
+							  <label>
+							    <input id="meatCheckboxHam" class="meatOption" type="checkbox" value="Ham">
+							    Ham - $2.00
+							  </label>
+							</div>
+							<div class="checkbox">
+							  <label>
+							    <input id="meatCheckboxTurkey" class="meatOption" type="checkbox" value="Turkey">
+							    Turkey - $2.00
+							  </label>
+							</div>
+							<div class="checkbox">
+							  <label>
+							    <input id="meatCheckboxChicken" class="meatOption" type="checkbox" value="Chicken">
+							    Chicken - $2.00
+							  </label>
+							</div>
+							<div class="checkbox">
+							  <label>
+							    <input id="meatCheckboxNone" class="meatOption" type="checkbox" value="None">
+							    No Meat
+							  </label>
+							</div>
+						</div>
+				</div>	
+
+
+				<div class="col-md-4">
+					<h3>Cheese</h3>
+						<div id="cheeseDiv">
+							<div class="checkbox">
+							  <label>
+							    <input id="cheeseCheckboxAmerican" class="cheeseOption" type="checkbox" value="American">
+							    American - $1.00
+							  </label>
+							</div>
+							<div class="checkbox">
+							  <label>
+							    <input id="cheeseCheckboxSwiss" class="cheeseOption" type="checkbox" value="Swiss">
+							    Swiss - $1.00
+							  </label>
+							</div>
+							<div class="checkbox">
+							  <label>
+							    <input id="cheeseCheckboxProvolone" class="cheeseOption" type="checkbox" value="Provolone">
+							    Provolone - $1.00
+							  </label>
+							</div>
+							<div class="checkbox">
+							  <label>
+							    <input id="cheeseCheckboxNone" class="cheeseOption" type="checkbox" value="None">
+							    No Cheese
+							  </label>
+							</div>
+						</div>
 				</div>
-		</div>	
+			</div><!-- closing div for row 1 -->
 
-
-		<div class="col-md-2">
-			<h3>Cheese</h3>
-				<div id="cheeseDiv">
-					<div class="checkbox">
-					  <label>
-					    <input id="cheeseCheckboxAmerican" class="cheeseOption" type="checkbox" value="American">
-					    American - $1.00
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input id="cheeseCheckboxSwiss" class="cheeseOption" type="checkbox" value="Swiss">
-					    Swiss - $1.00
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input id="cheeseCheckboxProvolone" class="cheeseOption" type="checkbox" value="Provolone">
-					    Provolone - $1.00
-					  </label>
-					</div>
-					<div class="checkbox">
-					  <label>
-					    <input id="cheeseCheckboxNone" class="cheeseOption" type="checkbox" value="None">
-					    No Cheese
-					  </label>
-					</div>
-				</div>
-		</div>
-
-
-		<div class="col-md-2">
+			<div class="row">
+		<div class="col-md-4">
 			<h3>Condiments</h3>
 				<div id="condimentsDiv">
 					<div class="checkbox">
@@ -135,7 +147,7 @@
 		</div>
 
 
-		<div class="col-md-2">
+		<div class="col-md-4">
 			<h3>Veggies</h3>
 				<div id="veggiesDiv">
 					<div class="checkbox">
@@ -166,15 +178,26 @@
 		</div>	
 	</div><!-- closing div for row 1 -->
 
-	<div class="row">
-		<div class="col-md-12">
-			<h3>Your total sandwich order is:</h3>
+
 		</div>
-		<h4 id="sandwichTotal" class="col-md-12">
-			<!-- Sandwich total will show up here -->
-		</h4>
-		<div id="sandwichItems"></div>
+
+		<div class="col-md-6">
+			
+				<img src="http://www.allfavourites.com/seibei/sandwich-dinosaur-seibei-detail.jpg">
+				
+				<h3>Your total sandwich order is:</h3>
+				
+				<h4 id="sandwichTotal" class="col-md-12">
+					<!-- Sandwich total will show up here -->
+				</h4>
+
+				<div id="sandwichItems">
+					<h5>Your sandwich ingredients:</h5>
+				</div>
+			
+		</div>
 	</div>
+
 
 </div>
 

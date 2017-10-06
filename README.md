@@ -7,3 +7,5 @@
 1. Implied requirements: Lint your JS (we should get no errors if we run Grunt), informative README.md
 
 ## Final Result
+![](1.png)
+![](2.png)
